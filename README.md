@@ -1,14 +1,19 @@
 # Royal wedding registry
 
-An Angular wedding guest registry in an ivory, parchment, and antique-gold style, with a small Node email API. The registry collects name, email, telephone, mailing address, spouse/partner status, and an optional accompanying guest name.
+An Angular wedding guest registry in an ivory, parchment, and antique-gold style. The RSVP form submits to Formspree and collects name, email, telephone, mailing address, spouse/partner status, and an optional accompanying guest name.
 
 ## Run locally
 
 1. Install Node.js (20.19+ is recommended) and run `npm install`.
-2. Run `npm start` to start the Angular site at `http://localhost:4200` and the RSVP API at port 3000.
-3. Before sending real emails, copy `.env.example` to `.env` and add your mail provider's SMTP settings and destination address. Keep `.env` private; it is ignored by Git. Until these settings are present, the form will tell guests that email is not configured.
+2. Create a form in Formspree and copy its form ID.
+3. Replace `YOUR_FORM_ID` in `src/app/app.ts` with that ID.
+4. Run `npm start` to start the Angular site at `http://localhost:4200`.
 
-Email is sent by the server, not directly from the browser. The sender address must be allowed by your SMTP provider. For production, deploy the Angular app and API behind the same domain and provide the SMTP values through your hosting provider's environment settings.
+Formspree handles RSVP delivery and notifications, so no Node API or SMTP credentials are needed. The form ID is part of the public endpoint; do not put private credentials in the Angular app. Review Formspree's current plan limits and data-retention terms before collecting guests' contact details.
+
+## Host on GitHub Pages
+
+Build the project site with `npm run build -- --base-href /wedding-rsvp/`, then publish `dist/wedding-rsvp/browser` using GitHub Actions. In the repository's **Settings → Pages**, choose **GitHub Actions** as the deployment source. If the repository name changes, update the base href to match its Pages URL.
 
 ## Personalize the registry
 

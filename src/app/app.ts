@@ -4,6 +4,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 type PartnerStatus = 'yes' | 'no' | 'undecided';
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meagpoqg';
+
 @Component({
   selector: 'app-root',
   imports: [ReactiveFormsModule],
@@ -35,29 +37,35 @@ export class App {
     }
 
     this.submitting.set(true);
-    this.http.post<{ message: string }>('/api/rsvp', this.rsvpForm.getRawValue()).subscribe({
-      next: (response) => {
-        this.responseIsError.set(false);
-        this.responseMessage.set(response.message);
-        this.rsvpForm.reset({
-          fullName: '',
-          email: '',
-          telephone: '',
-          mailingAddress: '',
-          partnerStatus: 'yes',
-          partnerName: '',
-        });
-        this.submitting.set(false);
-      },
-      error: (error: HttpErrorResponse) => {
-        this.responseIsError.set(true);
-        this.responseMessage.set(
-          typeof error.error?.message === 'string'
-            ? error.error.message
-            : 'We could not send your RSVP right now. Please try again later.',
-        );
-        this.submitting.set(false);
-      },
-    });
+    this.http
+      .post(
+        FORMSPREE_ENDPOINT,
+        { ...this.rsvpForm.getRawValue(), _subject: 'Royal Guest Registry RSVP' },
+        { headers: { Accept: 'application/json' } },
+      )
+      .subscribe({
+        next: () => {
+          this.responseIsError.set(false);
+          this.responseMessage.set('Thank you! Your RSVP has been received.');
+          this.rsvpForm.reset({
+            fullName: '',
+            email: '',
+            telephone: '',
+            mailingAddress: '',
+            partnerStatus: 'yes',
+            partnerName: '',
+          });
+          this.submitting.set(false);
+        },
+        error: (error: HttpErrorResponse) => {
+          this.responseIsError.set(true);
+          this.responseMessage.set(
+            typeof error.error?.message === 'string'
+              ? error.error.message
+              : 'We could not send your RSVP right now. Please try again later.',
+          );
+          this.submitting.set(false);
+        },
+      });
   }
 }

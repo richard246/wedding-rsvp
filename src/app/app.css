@@ -142,7 +142,7 @@
 }
 
 .hero-backdrop {
-  background-image: url('/images/fox-theatre-at-night.png');
+  background-image: url('../../public/images/fox-theatre-at-night.png');
   background-position: center 45%;
   background-size: cover;
   transform: scale(1.015);
