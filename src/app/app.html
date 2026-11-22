@@ -1,0 +1,250 @@
+<main class="experience" id="home">
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Wedding home">
+      <span class="wordmark-mark" aria-hidden="true">A <i>&amp;</i> B</span>
+      <span class="wordmark-caption">A ROYAL CELEBRATION</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#celebration">THE CELEBRATION</a>
+      <a class="nav-rsvp" href="#registry">RSVP <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-backdrop" role="img" aria-label="The Fox Theatre in Atlanta glowing at night"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <p class="eyebrow reveal">A ROYAL CELEBRATION · ATLANTA, GEORGIA</p>
+      <h1 id="hero-title" class="reveal">One day.<br /><em>Forever.</em></h1>
+      <p class="hero-description reveal">
+        A beautiful beginning deserves a beautiful gathering. We would be honored to celebrate with you.
+      </p>
+      <a class="hero-button reveal" href="#celebration">
+        DISCOVER THE CELEBRATION <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+    <div class="hero-footer">
+      <span>YOUR NAMES</span>
+      <span>FOX THEATRE · ATLANTA, GEORGIA</span>
+      <span class="scroll-hint">SCROLL TO EXPLORE ↓</span>
+    </div>
+  </section>
+
+  <section class="chapter chapter-intro" id="celebration">
+    <div class="chapter-copy reveal">
+      <p class="eyebrow">A GATHERING OF OUR DEAREST</p>
+      <h2>A moment to<br /><em>remember.</em></h2>
+      <p>
+        We’re bringing our favorite people together for a day filled with warmth, wonder, and all the
+        little moments that make a love story.
+      </p>
+      <div class="chapter-details">
+        <div><span>WHEN</span><strong>YOUR WEDDING DATE</strong></div>
+        <div><span>WHERE</span><strong>FOX THEATRE · ATLANTA, GA</strong></div>
+      </div>
+    </div>
+    <figure class="chapter-image palace-detail reveal">
+      <img
+        src="/images/fox-theatre-sample-night.webp"
+        alt="The Fox Theatre and its illuminated marquee at night in Atlanta"
+        loading="lazy"
+      />
+      <figcaption>FOX THEATRE · ATLANTA AFTER DARK</figcaption>
+    </figure>
+    <span class="chapter-number" aria-hidden="true">01</span>
+  </section>
+
+  <section class="cinematic" aria-label="A celebration made brighter by your presence">
+    <img
+      src="/images/fox-theatre-stage.jpg"
+      alt="A view of the ornate Fox Theatre auditorium and stage"
+      loading="lazy"
+    />
+    <div class="cinematic-shade"></div>
+    <div class="cinematic-copy reveal">
+      <p class="eyebrow">THE DAY WE’VE BEEN DREAMING OF</p>
+      <h2>Better, because<br />you’re <em>there.</em></h2>
+    </div>
+    <span class="cinematic-caption">FOX THEATRE · ATLANTA, GEORGIA</span>
+  </section>
+
+  <section class="video-chapter" aria-labelledby="video-title">
+    <div class="video-copy reveal">
+      <p class="eyebrow">A LITTLE SOMETHING TO SHARE</p>
+      <h2 id="video-title">A Wish<br /><em>Come True.</em></h2>
+      <p>Press play whenever you’re ready to watch.</p>
+    </div>
+    <div class="video-frame reveal">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/Igzj2KIDJ9U?start=9&amp;playsinline=1"
+        title="A Wish Come True"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <section class="guest-feature" aria-labelledby="guest-title">
+    <img
+      class="guest-feature-image"
+      src="/images/image0-enhanced-bokeh.jpg"
+      alt="A bride and groom seen from behind entering the Fox Theatre among their guests"
+      loading="lazy"
+    />
+    <div class="guest-feature-shade" aria-hidden="true"></div>
+    <div class="guest-ticket reveal">
+      <p class="guest-ticket-kicker"><span aria-hidden="true">✦</span> THE FOX THEATRE · ATLANTA</p>
+      <div class="guest-ticket-stamp" aria-hidden="true">ONE<br />NIGHT<br />ONLY</div>
+      <h2 id="guest-title">Our favorite<br /><em>people.</em></h2>
+      <p>
+        Every great night needs its favorite people. Save your seat in our guest registry, and
+        we’ll send the invitation details your way.
+      </p>
+      <a class="guest-ticket-link" href="#registry">SAVE YOUR SEAT <span aria-hidden="true">↗</span></a>
+      <div class="guest-ticket-footer">
+        <span>ADMIT WITH LOVE</span>
+        <span>ATL · THE FOX</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="registry-section" id="registry" aria-labelledby="registry-title">
+    <div class="registry-intro reveal">
+      <span class="crest" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="44" />
+          <circle cx="50" cy="50" r="37" />
+          <path d="M25 37 37 48 50 27l13 21 12-11-5 29H30l-5-29Z" />
+          <path d="M34 72h32M40 77h20" />
+          <circle cx="25" cy="34" r="2" />
+          <circle cx="50" cy="24" r="2" />
+          <circle cx="75" cy="34" r="2" />
+        </svg>
+      </span>
+      <p class="eyebrow">BY ROYAL PROCLAMATION OF UNION</p>
+      <h2 id="registry-title">The Royal<br /><em>Guest Registry</em></h2>
+      <p class="registry-lede">Kindly leave your details below. We can’t wait to celebrate with you.</p>
+      <div class="ornament" aria-hidden="true"><span></span>❧<span></span></div>
+    </div>
+
+    <form class="registry-form reveal" [formGroup]="rsvpForm" (ngSubmit)="submitRsvp()" novalidate>
+      <div class="form-grid">
+        <label>
+          Full name <span aria-hidden="true">*</span>
+          <input
+            type="text"
+            formControlName="fullName"
+            autocomplete="name"
+            placeholder="Enter your full name"
+            required
+            maxlength="100"
+            [attr.aria-invalid]="rsvpForm.controls.fullName.touched && rsvpForm.controls.fullName.invalid"
+          />
+          @if (rsvpForm.controls.fullName.touched && rsvpForm.controls.fullName.invalid) {
+            <small>Please enter your full name.</small>
+          }
+        </label>
+
+        <label>
+          Email address <span aria-hidden="true">*</span>
+          <input
+            type="email"
+            formControlName="email"
+            autocomplete="email"
+            placeholder="Enter your email address"
+            required
+            maxlength="254"
+            [attr.aria-invalid]="rsvpForm.controls.email.touched && rsvpForm.controls.email.invalid"
+          />
+          @if (rsvpForm.controls.email.touched && rsvpForm.controls.email.invalid) {
+            <small>Please enter a valid email address.</small>
+          }
+        </label>
+
+        <label>
+          Telephone number <span aria-hidden="true">*</span>
+          <input
+            type="tel"
+            formControlName="telephone"
+            autocomplete="tel"
+            placeholder="Enter your telephone number"
+            required
+            maxlength="40"
+            [attr.aria-invalid]="rsvpForm.controls.telephone.touched && rsvpForm.controls.telephone.invalid"
+          />
+          @if (rsvpForm.controls.telephone.touched && rsvpForm.controls.telephone.invalid) {
+            <small>Please enter your telephone number.</small>
+          }
+        </label>
+
+        <label>
+          Mailing address <span aria-hidden="true">*</span>
+          <textarea
+            formControlName="mailingAddress"
+            autocomplete="street-address"
+            rows="3"
+            maxlength="500"
+            placeholder="Enter your complete mailing address"
+            required
+            [attr.aria-invalid]="rsvpForm.controls.mailingAddress.touched && rsvpForm.controls.mailingAddress.invalid"
+          ></textarea>
+          @if (rsvpForm.controls.mailingAddress.touched && rsvpForm.controls.mailingAddress.invalid) {
+            <small>Please enter your mailing address.</small>
+          }
+        </label>
+      </div>
+
+      <fieldset>
+        <legend>Will you be accompanied by a spouse or partner? <span aria-hidden="true">*</span></legend>
+        <div class="choice-list">
+          <label class="choice">
+            <input type="radio" formControlName="partnerStatus" value="yes" />
+            <span class="radio-mark"></span><span class="choice-letter">A</span> Yes
+          </label>
+          <label class="choice">
+            <input type="radio" formControlName="partnerStatus" value="no" />
+            <span class="radio-mark"></span><span class="choice-letter">B</span> No
+          </label>
+          <label class="choice">
+            <input type="radio" formControlName="partnerStatus" value="undecided" />
+            <span class="radio-mark"></span><span class="choice-letter">C</span> To be determined
+          </label>
+        </div>
+      </fieldset>
+
+      <label>
+        Accompanying guest name <span class="optional">(optional)</span>
+        <input
+          type="text"
+          formControlName="partnerName"
+          autocomplete="off"
+          placeholder="Enter your guest’s name"
+          maxlength="100"
+        />
+      </label>
+
+      <p class="disclaimer">
+        Registration of an accompanying guest does not guarantee an additional invitation. Formal
+        invitations will specify the guests included.
+      </p>
+
+      <button class="submit-button" type="submit" [disabled]="submitting()">
+        {{ submitting() ? 'Submitting your reply…' : 'Enter the Royal Registry' }}
+        <span aria-hidden="true">→</span>
+      </button>
+      @if (responseMessage()) {
+        <p class="form-message" [class.error]="responseIsError()" role="status" aria-live="polite">
+          {{ responseMessage() }}
+        </p>
+      }
+    </form>
+
+    <footer class="registry-footer">
+      <span>WITH LOVE</span>
+      <span class="footer-divider" aria-hidden="true">✦</span>
+      <span>YOUR NAMES · YOUR WEDDING DAY</span>
+    </footer>
+  </section>
+</main>
